@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAppTemplate.Common", "CoreAppTemplate.Common\CoreAppTemplate.Common.csproj", "{E5F3F762-BE19-44E2-9AEB-56D1ACEC06D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.Common", "CoreAppTemplate.Common\CoreAppTemplate.Common.csproj", "{E5F3F762-BE19-44E2-9AEB-56D1ACEC06D0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.DataAccess", "CoreAppTemplate.DataAccess\CoreAppTemplate.DataAccess.csproj", "{129A63A2-2CD5-42B4-845B-B1F2D22315B6}"
 EndProject
@@ -13,15 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.Integration
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.WebApi", "CoreAppTemplate.WebAPI\CoreAppTemplate.WebApi.csproj", "{AF8461A3-4A90-40CB-94A4-5B61A899AB1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAppTemplate.HangfireServer", "CoreAppTemplate.HangfireServer\CoreAppTemplate.HangfireServer.csproj", "{7381CB02-9F89-437D-B2F2-EBEDFCBB37F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.HangfireServer", "CoreAppTemplate.HangfireServer\CoreAppTemplate.HangfireServer.csproj", "{7381CB02-9F89-437D-B2F2-EBEDFCBB37F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAppTemplate.Web.Blazor.Server", "CoreAppTemplate.Web.Blazor\Server\CoreAppTemplate.Web.Blazor.Server.csproj", "{33444157-5695-4F38-BE90-04F475D811BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.Web.Blazor.Server", "CoreAppTemplate.Web.Blazor\Server\CoreAppTemplate.Web.Blazor.Server.csproj", "{33444157-5695-4F38-BE90-04F475D811BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAppTemplate.Web.Blazor.Client", "CoreAppTemplate.Web.Blazor\Client\CoreAppTemplate.Web.Blazor.Client.csproj", "{CD8E77C6-7247-4A12-8C03-1E975A4105D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.Web.Blazor.Client", "CoreAppTemplate.Web.Blazor\Client\CoreAppTemplate.Web.Blazor.Client.csproj", "{CD8E77C6-7247-4A12-8C03-1E975A4105D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAppTemplate.Web.Blazor.Shared", "CoreAppTemplate.Web.Blazor\Shared\CoreAppTemplate.Web.Blazor.Shared.csproj", "{5EACF3C6-2E1A-40F3-8916-F82BBF293451}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAppTemplate.IdentityServer", "CoreAppTemplate.IdentityServer\CoreAppTemplate.IdentityServer.csproj", "{FE8E5908-1ABD-4505-B20F-70C5F2DA88C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.Web.Blazor.Shared", "CoreAppTemplate.Web.Blazor\Shared\CoreAppTemplate.Web.Blazor.Shared.csproj", "{5EACF3C6-2E1A-40F3-8916-F82BBF293451}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Common", "01_Common", "{CC0E07BE-D2F8-4060-8D19-4E0BAF1136A8}"
 EndProject
@@ -38,6 +36,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07_WebAPI", "07_WebAPI", "{302D487F-D80E-4B63-84EA-F4285C35217C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08_Web", "08_Web", "{7D553ED1-D151-47DB-BD75-36F4FAB1A896}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppTemplate.IdentityServer", "CoreAppTemplate.IdentityServer\CoreAppTemplate.IdentityServer.csproj", "{755249C0-F661-4230-BD14-A16DE4D04C06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,10 +81,10 @@ Global
 		{5EACF3C6-2E1A-40F3-8916-F82BBF293451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EACF3C6-2E1A-40F3-8916-F82BBF293451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EACF3C6-2E1A-40F3-8916-F82BBF293451}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE8E5908-1ABD-4505-B20F-70C5F2DA88C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE8E5908-1ABD-4505-B20F-70C5F2DA88C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE8E5908-1ABD-4505-B20F-70C5F2DA88C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE8E5908-1ABD-4505-B20F-70C5F2DA88C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{755249C0-F661-4230-BD14-A16DE4D04C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755249C0-F661-4230-BD14-A16DE4D04C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755249C0-F661-4230-BD14-A16DE4D04C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755249C0-F661-4230-BD14-A16DE4D04C06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,7 +99,7 @@ Global
 		{33444157-5695-4F38-BE90-04F475D811BB} = {7D553ED1-D151-47DB-BD75-36F4FAB1A896}
 		{CD8E77C6-7247-4A12-8C03-1E975A4105D6} = {7D553ED1-D151-47DB-BD75-36F4FAB1A896}
 		{5EACF3C6-2E1A-40F3-8916-F82BBF293451} = {7D553ED1-D151-47DB-BD75-36F4FAB1A896}
-		{FE8E5908-1ABD-4505-B20F-70C5F2DA88C8} = {7DA615A2-2F42-4F3B-8230-64CD81C4687F}
+		{755249C0-F661-4230-BD14-A16DE4D04C06} = {7DA615A2-2F42-4F3B-8230-64CD81C4687F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {618C1D4A-4799-44F0-8B51-58F2A7B1A55A}
