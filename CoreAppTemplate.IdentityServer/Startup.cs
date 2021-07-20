@@ -8,8 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using IdentityServerHost.Quickstart.UI;
 using Duende.IdentityServer;
+using CoreAppTemplate.IdentityServer.Data;
+using IdentityServerHost.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace CoreAppTemplate.IdentityServer
 {
@@ -28,7 +30,17 @@ namespace CoreAppTemplate.IdentityServer
         {
             services.AddControllersWithViews();
 
-            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDatabaseDeveloperPageExceptionFilter();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("AspIdentityDb"),
+                    o => o.MigrationsAssembly(typeof(Startup).Assembly.FullName)));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            var configurationConnectionString = Configuration.GetConnectionString("IdentityServerDb");
 
             var builder = services.AddIdentityServer(options =>
             {
@@ -40,22 +52,22 @@ namespace CoreAppTemplate.IdentityServer
                 // see https://docs.duendesoftware.com/identityserver/v5/fundamentals/resources/
                 options.EmitStaticAudienceClaim = true;
             })
-                .AddTestUsers(TestUsers.Users)
                 // this adds the config data from DB (clients, resources, CORS)
                 .AddConfigurationStore(options =>
                 {
                     options.ConfigureDbContext = b =>
-                        b.UseSqlite(connectionString, dbOpts => dbOpts.MigrationsAssembly(typeof(Startup).Assembly.FullName));
+                        b.UseSqlServer(configurationConnectionString, dbOpts => dbOpts.MigrationsAssembly(typeof(Startup).Assembly.FullName));
                 })
                 // this adds the operational data from DB (codes, tokens, consents)
                 .AddOperationalStore(options =>
                 {
                     options.ConfigureDbContext = b =>
-                        b.UseSqlite(connectionString, dbOpts => dbOpts.MigrationsAssembly(typeof(Startup).Assembly.FullName));
+                        b.UseSqlServer(configurationConnectionString, dbOpts => dbOpts.MigrationsAssembly(typeof(Startup).Assembly.FullName));
 
                     // this enables automatic token cleanup. this is optional.
                     options.EnableTokenCleanup = true;
-                });
+                })
+                .AddAspNetIdentity<ApplicationUser>();
 
             services.AddAuthentication()
                 .AddGoogle(options =>
@@ -75,7 +87,6 @@ namespace CoreAppTemplate.IdentityServer
             if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
             }
 
             app.UseStaticFiles();

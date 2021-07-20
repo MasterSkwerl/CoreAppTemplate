@@ -18,11 +18,11 @@ namespace CoreAppTemplate.IdentityServer
             var services = new ServiceCollection();
             services.AddOperationalDbContext(options =>
             {
-                options.ConfigureDbContext = db => db.UseSqlite(connectionString, sql => sql.MigrationsAssembly(typeof(SeedConfigurationData).Assembly.FullName));
+                options.ConfigureDbContext = db => db.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(typeof(SeedConfigurationData).Assembly.FullName));
             });
             services.AddConfigurationDbContext(options =>
             {
-                options.ConfigureDbContext = db => db.UseSqlite(connectionString, sql => sql.MigrationsAssembly(typeof(SeedConfigurationData).Assembly.FullName));
+                options.ConfigureDbContext = db => db.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(typeof(SeedConfigurationData).Assembly.FullName));
             });
 
             var serviceProvider = services.BuildServiceProvider();

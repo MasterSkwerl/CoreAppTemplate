@@ -22,7 +22,7 @@ namespace CoreAppTemplate.IdentityServer
             var services = new ServiceCollection();
             services.AddLogging();
             services.AddDbContext<ApplicationDbContext>(options =>
-               options.UseSqlite(connectionString, o => o.MigrationsAssembly(typeof(Startup).Assembly.FullName)));
+               options.UseSqlServer(connectionString, o => o.MigrationsAssembly(typeof(Startup).Assembly.FullName)));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
